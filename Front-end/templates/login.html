@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/Front-end/styles/styles.css">
+    <link rel="stylesheet" href="/Front-end/styles/modalWindows.css">
+    <script src="/Front-end/scripts/script.js" defer></script>
+    <script src="/Front-end/scripts/requestToLogin.js" defer></script>
+    <script src="/Front-end/scripts/modalWindows.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="registrationForm">
+            <div class="form-group">
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </div>
+            <div class="form-group password-container">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <img id="togglePassword" class="eye-icon" src="/Front-end/images/closed-eye.png" onclick="togglePassword()">
+            </div>
+            <button id="registerButton" type="submit">Login</button>
+        </form>
+        <p>No account? <a href="https://music.yandex.ru">register</a></p>
+    </div>
+
+<!-- Модальное окно -->
+<div id="myModal" class="modal">
+
+    <!-- Модальный контент -->
+    <div class="modal-content">
+        <p id="modalText">Здесь будет текст</p>
+        <button id="next" onclick="redirectToWebsite()">next</button>
+    </div>
+
+</div>
+
+<!-- Модальное окно с ошибкой -->
+<div id="myModalError" class="modal">
+
+    <!-- Модальный контент -->
+    <div class="modal-content">
+        <p id="modalTextError">Здесь будет текст</p>
+    </div>
+
+</div>
+
+</body>
+</html>

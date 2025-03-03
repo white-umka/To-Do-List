@@ -1,0 +1,75 @@
+/* Общие стили для модальных окон */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Отступ сверху */
+    padding: 20px; /* Внутренние отступы */
+    border: 1px solid #888;
+    width: 400px; /* Фиксированная ширина */
+    max-width: 90%; /* Максимальная ширина для адаптивности */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Тень */
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование по горизонтали */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+.modal.show {
+    display: block;
+    opacity: 1;
+}
+
+.modal-content.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Стили для текста внутри модального окна */
+.modal-content a {
+    font-size: 1.2em; /* Размер текста */
+    margin: 0;
+    width: 100%;
+    word-wrap: break-word; /* Перенос слов, если текст слишком длинный */
+    padding: 10px 0; /* Отступы сверху и снизу для текста */
+}
+
+/* Стили для кнопки в модальном окне */
+.modal-content button {
+    margin-top: 10px; /* Отступ сверху */
+    padding: 10px 20px;
+    background: linear-gradient(to right, #1b5edb, #8b12db);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: transform 0.3s ease, background 0.3s ease;
+    width: 100%; /* Кнопка занимает всю ширину */
+    max-width: 200px; /* Максимальная ширина кнопки */
+}
+
+.modal-content button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для модального окна с ошибкой */
+#myModalError .modal-content {
+    min-height: auto; /* Высота автоматическая */
+}

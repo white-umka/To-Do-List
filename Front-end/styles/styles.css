@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/Front-end/images/pur2.jpg'); /* Замените на путь к вашей фотографии */
+    background-size: cover;
+    margin-top: 170px; /* насколько низко нужно опустить контейнер */
+    background-repeat: no-repeat; /* Не повторяет изображение */
+}
+
+html {
+    height: 100%; /* Занимаем всю высоту */
+    margin: 0; /* Убираем отступы */
+    padding: 0; /* Убираем внутренние отступы */
+}
+
+.container {
+    max-width: 500px; /* Увеличенное окно */
+    margin: auto;
+    padding: 30px; /* Увеличенные внутренние отступы */
+    background: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон для контейнера */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    margin-top: 40px;
+}
+
+h1 {
+    text-align: center;
+    color: black; /* Черный цвет для заголовка */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Увеличенное расстояние между полями */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 472px; /* Поле ввода занимает всю ширину контейнера */
+    padding: 12px; /* Увеличенные внутренние отступы */
+    border: 2px solid #544ae7; /* Цвет рамки */
+    border-radius: 5px; /* Закругление углов */
+    font-size: 16px;
+    transition: border-color 0.3s; /* Плавный переход цвета рамки */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #8e20dd; /* Цвет рамки при фокусе */
+    outline: none; /* Убираем стандартное выделение */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #1b5edb, #8b12db); /* Градиент от фиолетового к синему */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s ease, background 0.3s ease; /* Добавлено свойство для плавного подъема */
+}
+
+button:hover {
+    transform: translateY(-5px); /* Поднимаем кнопку на 5 пикселей */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Добавляем тень */
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    text-align: center;
+}
+
+.url {
+    text-decoration: underline; /* Подчеркиваем ссылку */
+    color: #8e20dd; /* ��вет ссылки */
+    transition: color 0.3s ease; /* Плавный переход цвета */
+}
+
+.url:hover {
+    text-decoration: underline; /* Подчеркиваем ссылку при наведении */
+}
+
+.password-container {
+    position: relative; /* Позволяет позиционировать дочерние элементы относительно этого контейнера */
+}
+
+
+
+.eye-icon {
+    position: absolute; /* Позиционирование значка относительно контейнера */
+    right: 12px; /* Положение значка справа */
+    top: 50%; /* Центрирование по вертикали */
+    transform: translateY(-50%); /* Центрирование по вертикали */
+    cursor: pointer; /* Указатель при наведении */
+    width: 24px; /* Ширина значка */
+    height: 24px; /* Высота значка */
+}
+
+.eye-icon.hidden {
+    visibility: hidden; /* Значок скрыт, но занимает место */
+}
