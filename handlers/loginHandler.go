@@ -3,6 +3,8 @@ package handlers
 import (
     "net/http"
 	"database/sql"
+	"fmt"
+	"io"
 
 	"my-go-project/users" 
     
@@ -27,6 +29,15 @@ func Login(c *gin.Context) {
 		return
 	}
 
+	// Логируем тело запроса
+	body, err := io.ReadAll(c.Request.Body)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	fmt.Println("Request body:", string(body))
+
+	
 	if err := users.IsEmpty(newUser.UserName, "Name"); err!= nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
         return
@@ -48,7 +59,8 @@ func Login(c *gin.Context) {
     }
 
 	if err := users.UserLogin(db, newUser.UserName, newUser.Password); err!= nil {
-		c.JSON(http.StatusUnauthorized, gin.H{"error": err.Error()})
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid username or password"})
+		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{"message": "Logged in successfully!"})

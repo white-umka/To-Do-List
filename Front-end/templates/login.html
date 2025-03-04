@@ -23,29 +23,26 @@
             </div>
             <button id="registerButton" type="submit">Login</button>
         </form>
-        <p>No account? <a href="https://music.yandex.ru">register</a></p>
+        <p>No account? <a class="url" href="http://localhost:8080/register">register</a></p>
     </div>
 
 <!-- Модальное окно -->
-<div id="myModal" class="modal">
 
-    <!-- Модальный контент -->
-    <div class="modal-content">
-        <p id="modalText">Здесь будет текст</p>
-        <button id="next" onclick="redirectToWebsite()">next</button>
+    <!-- Модальное окно -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <a id="modalText">Здесь будет текст</a>
+            <button id="next" onclick="redirectToWebsite()">next</button>
+        </div>
     </div>
 
-</div>
-
-<!-- Модальное окно с ошибкой -->
-<div id="myModalError" class="modal">
-
-    <!-- Модальный контент -->
-    <div class="modal-content">
-        <p id="modalTextError">Здесь будет текст</p>
+    <!-- Модальное окно с ошибкой -->
+    <div id="myModalError" class="modal">
+        <div class="modal-content">
+            <a id="modalTextError">Здесь будет текст ошибки</a>
+            <button id="close" onclick="closeModalError()">close</button>
+        </div>
     </div>
-
-</div>
 
 </body>
 </html>

@@ -2,16 +2,24 @@ package handlers
 
 import (
     "net/http"
+	"database/sql"
 
 	"github.com/gin-gonic/gin"
 	_ "github.com/mattn/go-sqlite3"
 
 	"my-go-project/users" 
-
 )
 
 
 func Register(c *gin.Context) {
+		// Открываем базу данных 
+		db, err := sql.Open("sqlite3", "users.db")
+		if err != nil {
+			panic(err.Error())
+		}
+		defer db.Close()
+		
+
 	var newUser users.User
 
 	if err := c.ShouldBindJSON(&newUser); err!= nil {

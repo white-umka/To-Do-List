@@ -29,7 +29,7 @@ function sendData(event) {
         if (!response.ok) {
             // Если ответ не успешен, выбрасываем ошибку
             return response.json().then(errorData => {
-                throw new Error(errorData.error || 'error registration');
+                throw new Error(errorData.error || 'error Login');
             });
         }
         return response.json(); 
@@ -42,3 +42,4 @@ function sendData(event) {
         openModalError(error.message)
     });
 }
+

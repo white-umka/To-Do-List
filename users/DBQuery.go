@@ -41,8 +41,9 @@ func UserLogin(db *sql.DB, userName, password string) error {
     err := row.Scan(&comparePassword)
     if err != nil {
         if err == sql.ErrNoRows {
-            return fmt.Errorf("user not found")
+            return fmt.Errorf("user %s not found", userName)
         }
+        return err
     }
 
     if comparePassword != password {
