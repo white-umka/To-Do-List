@@ -53,5 +53,12 @@ func Register(c *gin.Context) {
     }
 
 	users.UserInsertDB(newUser)
-	c.JSON(http.StatusCreated, gin.H{"message": "User registered successfully!"})
+
+	token, err := users.CreateToken(newUser.UserName, newUser.ID) 
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error":err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusCreated, gin.H{"message": token})
 }
